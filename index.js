@@ -1,7 +1,9 @@
+
 import express from 'express';
 import fs from 'fs';
 import multer from 'multer';
 import cors from 'cors';
+
 
 import mongoose from 'mongoose';
 
@@ -12,7 +14,8 @@ import { handleValidationErrors, checkAuth } from './utils/index.js';
 import { UserController, PostController } from './controllers/index.js';
 
 mongoose
-  .connect(process.env.MONGODB_URI)
+
+  .connect('mongodb+srv://sofiabelcik:12345qwertyn@cluster0.j7tqhi3.mongodb.net/?retryWrites=true&w=majority')
   .then(() => console.log('DB ok'))
   .catch((err) => console.log('DB error', err));
 
